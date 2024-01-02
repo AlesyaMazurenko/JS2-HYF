@@ -54,3 +54,43 @@ window.addEventListener("load", functionIsLoaded);
 
 // Mouse position
 
+let screenLog = document.querySelector("#screen-log");
+document.addEventListener('mousemove', logKey);
+
+let position = [];
+ 
+function logKey(e) {
+    position.push([e.screenX, e.screenY ]);
+   screenLog.innerText = `
+    Screen X/Y: ${e.screenX}, ${e.screenY}
+    Client X/Y: ${e.clientX}, ${e.clientY}`;
+    console.log(position);
+}
+
+function avarageMouse() {
+    setInterval(document.addEventListener("mousemove", logKey), 1000);
+}
+
+// const positionA = setTimeout({
+//     const avarage=
+// }, 30000)
+// console.log(positionA);
+
+function productArray(numbers) {
+  //your code here
+  let newArr = [];
+  for (let i = 0; i < numbers.length; i++) {
+    let mult = 1;
+    for (let j = 0; j < numbers.length; j++) {
+      if (i !== j) {
+          mult *= numbers[j];
+         
+      }
+    }
+       console.log(newArr);
+    newArr.push(mult);
+  }
+    return newArr;
+}
+console.log(productArray([3, 27, 4, 2]))
+    
